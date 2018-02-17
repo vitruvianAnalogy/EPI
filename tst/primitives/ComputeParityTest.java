@@ -19,5 +19,20 @@ public class ComputeParityTest {
 	public void testEvenParityUsingBruteForceForNegativeNumber(){
 		Assert.assertEquals(1, new ComputeParity().returnParityUsingBruteForce(-3)); //-3 is 1111111111111101
 	}
+	
+	@Test
+	public void testOddParityUsingOptimization(){
+		Assert.assertEquals(1, new ComputeParity().returnParityUsingOptimization(1));
+	}
+	
+	@Test
+	public void testEvenParityUsingOptimization(){
+		Assert.assertEquals(0, new ComputeParity().returnParityUsingOptimization(3));
+	}
+	
+	@Test
+	public void testEvenParityUsingOptimizationForNegativeNumber(){
+		Assert.assertEquals(1, new ComputeParity().returnParityUsingOptimization(-3)); //-3 is 1111111111111101
+	}
 
 }
