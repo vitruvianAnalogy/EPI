@@ -17,4 +17,16 @@ public class SwapBits {
 		t = new String(t1.reverse());
 		return Integer.parseInt(t, 2);
 	}
+	
+	public int optimizedBruteForce(int x, int i, int j){
+		//If index i element and index j element are same, we don't need to change anything.
+		//Also, we can simply flip the ith and jth element if they are different.
+		if(((x>>i) & 1)==((x>>j) & 1)){
+			return x;
+		} else {
+			//How to flip one bit? By XORing
+			x = x ^ (1<<i) ^ (1<<j);
+		}
+		return x;
+	}
 }
