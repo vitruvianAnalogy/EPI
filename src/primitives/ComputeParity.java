@@ -59,4 +59,25 @@ public class ComputeParity {
 				precomputedParity[(int)((x>>>MASK_SIZE*1)& BIT_MASK)] ^
 				precomputedParity[(int)(x& BIT_MASK)]);
 	}
+	
+	//Important info: If we use int instead of long, our test case will fail , since x >>> 32 if x is int is returning x.
+	//Check https://stackoverflow.com/questions/32648097/java-right-shift-integer-by-32
+	/**
+	 *Bug: Integer shift by 32 Pattern id: ICAST_BAD_SHIFT_AMOUNT, 
+	 *type: BSHIFT, 
+	 *category: CORRECTNESS. The code performs an integer shift by a constant amount outside the range 0..31. 
+	 *The effect of this is to use the lower 5 bits of the integer value to decide how much to shift by. 
+	 *This probably isn't want was expected, and it at least confusing.
+	 */
+	public int returnParityUsingXOR(long x){
+		x ^= (x >>> 32); //Shifts the 1-32 to 33-64 bits and then XOR them with the correct 33-64 bits, making (1-32 bits of no use)
+		x ^= (x >>> 16);//Shifts 1-16 bits which ends up shifting 33-48 in place of 48-64 bits and then XORing them with the real 48-64
+		x ^= (x >>> 8);
+		x ^= (x >>> 4);
+		x ^= (x >>> 2);
+		x ^= (x >>> 1);
+		
+		return (int)(x & 0x1); //Since returning x will return the entire all the 64 bits, we only want to return the last bit
+		//therefore we masked it with 1, 0x1 represents the hexadecimal equivalent of binary 1.
+	}
 }
