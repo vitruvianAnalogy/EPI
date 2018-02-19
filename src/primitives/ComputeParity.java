@@ -68,6 +68,8 @@ public class ComputeParity {
 	 *category: CORRECTNESS. The code performs an integer shift by a constant amount outside the range 0..31. 
 	 *The effect of this is to use the lower 5 bits of the integer value to decide how much to shift by. 
 	 *This probably isn't want was expected, and it at least confusing.
+	 *
+	 *Runtime complexity : O (log n)
 	 */
 	public int returnParityUsingXOR(long x){
 		x ^= (x >>> 32); //Shifts the 1-32 to 33-64 bits and then XOR them with the correct 33-64 bits, making (1-32 bits of no use)

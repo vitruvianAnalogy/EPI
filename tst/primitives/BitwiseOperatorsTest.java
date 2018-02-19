@@ -27,4 +27,13 @@ public class BitwiseOperatorsTest {
 		Assert.assertEquals(1, test.xorOperation(2, 3));
 	}
 	
+	@Test
+	public void testIsPowerOf2True(){
+		Assert.assertEquals(true, test.isPowerOf2(4));
+	}
+	
+	@Test
+	public void testIsPowerOf2False(){
+		Assert.assertEquals(false, test.isPowerOf2(5));
+	}
 }
