@@ -36,4 +36,14 @@ public class BitwiseOperatorsTest {
 	public void testIsPowerOf2False(){
 		Assert.assertEquals(false, test.isPowerOf2(5));
 	}
+	
+	@Test
+	public void addUsingBitwiseOperatorsTest(){
+		Assert.assertEquals(11, test.addUsingBitwiseOperators(2, 9));
+	}
+	
+	@Test
+	public void multiplyUsingBitwiseOperatorsOnlyTest(){
+		Assert.assertEquals(18, test.multiplyUsingBitwiseOperatorsOnly(3, 6));
+	}
 }
