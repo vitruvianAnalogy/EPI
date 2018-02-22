@@ -28,5 +28,14 @@ public class Snippets {
 		
 		return x>0?reverseX:-reverseX;
 	}
+	
+	public boolean isNumberPalindromeUsingReverseDigits(int x){
+		if(x<=0){
+			return x == 0;
+		} else 
+		{
+			return x==reverseDigits(x);
+		}
+	}
 
 }

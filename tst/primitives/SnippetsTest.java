@@ -22,5 +22,23 @@ public class SnippetsTest {
 		Snippets s = new Snippets();
 		Assert.assertEquals(-184, s.reverseDigits(-481));
 	}
+	
+	@Test
+	public void testIsNumberPalindromeUsingReverseDigitsTrue(){
+		Snippets s = new Snippets();
+		Assert.assertEquals(true, s.isNumberPalindromeUsingReverseDigits(151));
+	}
 
+	@Test
+	public void testIsNumberPalindromeUsingReverseDigitsFalse(){
+		Snippets s = new Snippets();
+		Assert.assertEquals(false, s.isNumberPalindromeUsingReverseDigits(144));
+	}
+	
+	@Test
+	public void testIsNegativeNumberPalindromeUsingReverseDigitsTrue(){
+		Snippets s = new Snippets();
+		Assert.assertEquals(false, s.isNumberPalindromeUsingReverseDigits(-151));
+	}
+	
 }
