@@ -119,5 +119,35 @@ public class BitwiseOperators {
 		}
 		return sum;
 	}
+	
+	public int divideUsingBitwiseOperatorsOnly(int x, int y){
+		int sum = 0;
+		int power = 16; // since we are using int, it is 16 bit in length
+		/**
+		 * We will shift y by k (here it is 16, because it is an int) which is equivalent to multiplying it by 2^k. 
+		 */
+		int yPower = y << power; 
+		
+		/**
+		 * We will use this product to find if it is bigger than x or not.
+		 */
+		while( x >= y){
+			/**
+			 * while yPower is greater than x, we keep, multiplying it with smaller powers of 2^k
+			 */
+			while(yPower>x){
+				yPower>>>=1;
+				--power;
+			}
+			/** When we reach a state when the product of 2^k with y becomes less than x, 
+			 * we subtract 2^k from x and then go back another iteration to re do the steps until
+			 * x stays bigger than y.
+			 */
+			sum += 1L <<power;
+			x -= yPower;
+		}
+		
+		return sum;
+	}
 
 }

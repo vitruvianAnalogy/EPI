@@ -46,4 +46,9 @@ public class BitwiseOperatorsTest {
 	public void multiplyUsingBitwiseOperatorsOnlyTest(){
 		Assert.assertEquals(18, test.multiplyUsingBitwiseOperatorsOnly(3, 6));
 	}
+	
+	@Test
+	public void divideUsingBitwiseOperatorsOnlyTest(){
+		Assert.assertEquals(3, test.divideUsingBitwiseOperatorsOnly(19, 6));
+	}
 }
