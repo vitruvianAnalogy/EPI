@@ -37,5 +37,25 @@ public class Snippets {
 			return x==reverseDigits(x);
 		}
 	}
+	
+	public boolean isNumberPalindrome(int x){
+		if(x<=0){
+			return x==0;
+		}
+		int numOfDigits = (int)Math.floor(Math.log10(x))+1;
+		int mostSignificantBitMask = (int)Math.pow(10, numOfDigits -1);
+		
+		for(int i = 0; i<numOfDigits/2; i++){
+			if((x/mostSignificantBitMask)!=(x%10)){
+				return false;
+			}
+			x = x % mostSignificantBitMask; // remove the most significant bit
+			x = x/10; // remove the least significant bit
+			
+			//we divide mostSignificantBitMask by 100 and not 10, because we remove two digits in one iteration
+			mostSignificantBitMask = mostSignificantBitMask/100;
+		}
+		return true;
+	}
 
 }

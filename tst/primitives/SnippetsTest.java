@@ -41,4 +41,22 @@ public class SnippetsTest {
 		Assert.assertEquals(false, s.isNumberPalindromeUsingReverseDigits(-151));
 	}
 	
+	@Test
+	public void testIsNumberPalindromeTrue(){
+		Snippets s = new Snippets();
+		Assert.assertEquals(true, s.isNumberPalindrome(151));
+	}
+
+	@Test
+	public void testIsNumberPalindromeFalse(){
+		Snippets s = new Snippets();
+		Assert.assertEquals(false, s.isNumberPalindrome(144));
+	}
+	
+	@Test
+	public void testIsNegativeNumberPalindromeTrue(){
+		Snippets s = new Snippets();
+		Assert.assertEquals(false, s.isNumberPalindrome(-151));
+	}
+	
 }
