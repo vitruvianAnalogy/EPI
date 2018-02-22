@@ -48,7 +48,12 @@ public class BitwiseOperatorsTest {
 	}
 	
 	@Test
-	public void divideUsingBitwiseOperatorsOnlyTest(){
-		Assert.assertEquals(3, test.divideUsingBitwiseOperatorsOnly(19, 6));
+	public void divideUsingShiftingAdditionAndSubtractionTest(){
+		Assert.assertEquals(3, test.divideUsingShiftingAdditionAndSubtraction(19, 6));
+	}
+	
+	@Test
+	public void exponentiationTest(){
+		Assert.assertEquals(8, test.exponentiation(2, 3), 0);
 	}
 }

@@ -120,7 +120,7 @@ public class BitwiseOperators {
 		return sum;
 	}
 	
-	public int divideUsingBitwiseOperatorsOnly(int x, int y){
+	public int divideUsingShiftingAdditionAndSubtraction(int x, int y){
 		int sum = 0;
 		int power = 16; // since we are using int, it is 16 bit in length
 		/**
@@ -148,6 +148,33 @@ public class BitwiseOperators {
 		}
 		
 		return sum;
+	}
+	
+	public double exponentiation(double x, int y){
+		double result = 1.0;
+		long power = y;
+		
+		//if y is negative, we reciprocate the number x to 1/x and change y to positive
+		if(y<0){
+			power = -y;
+			x = 1.0/x;
+		}
+		
+		//We will try to do more exponentiation at each multiplication
+		while(power!=0){
+			/**
+			 * If y is even, we can split it into (x^(y/2))^2, if it is odd we can split it like
+			 * x * (x^(y/2))^2
+			 */
+			if((power&1)!=0){ //If odd
+				result = result * x;
+			}
+			x *= x; //We have accomplished x^2, now we need to accomplish y/2
+			power >>>=1; //Divide power by 2, so make the power y/2 and repeat the loop
+		}
+		
+		return result;
+		
 	}
 
 }
