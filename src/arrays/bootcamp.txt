@@ -1,0 +1,22 @@
+Insertion into a full array can be handled by resizing.
+
+Resizing - Allocates a new array with additional memory and copy over entries from original array.
+
+Instead of DELETING an entry in array, consider OVERWRITING it.
+
+Array index out of bounds is a common error. Be careful while accessing.
+
+Don't worry about preserving the integrity of an array 
+(sortedness, keeping equal entries together, etc.) until it is time to return.
+So that, all the operations associated with it happen at the end to 
+save CPU cycles from investing in change that will be overwritten further down
+the code.
+
+Array serves as a good structure when the distribution of elements is known
+in advance.
+
+When operating on 2D arrays, use parallel logic for rows and for columns.
+
+Sometimes it is easier to SIMULATE THE SPECIFICATION, than to analytically solve for result.
+For e.g. rather than writing formula for ith entry in spiral order, just compute
+the output from the beginning.
