@@ -20,3 +20,20 @@ When operating on 2D arrays, use parallel logic for rows and for columns.
 Sometimes it is easier to SIMULATE THE SPECIFICATION, than to analytically solve for result.
 For e.g. rather than writing formula for ith entry in spiral order, just compute
 the output from the beginning.
+
+-----------------------------------------
+
+Deep equals = Two array references are considered deeply equal if both are null, 
+or if they refer to arrays that contain the same number of elements and all 
+corresponding pairs of elements in the two arrays are deeply equal.
+
+Two possibly null elements e1 and e2 are deeply equal if any of the following conditions hold:
+
+    e1 and e2 are both arrays of object reference types, and Arrays.deepEquals(e1, e2) would return true
+    e1 and e2 are arrays of the same primitive type, and the appropriate overloading of Arrays.equals(e1, e2) would return true.
+    e1 == e2
+    e1.equals(e2) would return true. 
+
+Note that this definition permits null elements at any depth. 
+
+-----------------------------------------
