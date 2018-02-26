@@ -78,6 +78,37 @@ public class LinkedList {
 		return dummyHead.next;
 	}
 	
+	public ListNode isCycle(ListNode head){
+		if(head == null)
+			return null;
+		
+		ListNode slow = head;
+		ListNode fast = head;
+		while(slow!=fast){
+			slow = slow.next;
+			if(fast.next == null){
+				return null;
+			}
+			fast = fast.next.next;
+		}
+		
+		return slow;
+	}
+	
+	public ListNode getHeadOfCycle(ListNode head){
+		
+		ListNode node;
+		if((node = isCycle(head))!=null){
+			while(head != node){
+				head = head.next;
+				node = node.next;
+			}
+		} else {
+			return null;
+		}
+		return head;
+	}
+	
 	public static void main(String[] args){
 		Arrays.asList(1,2,3);
 		Arrays.asList(new int []{1,2,3});
