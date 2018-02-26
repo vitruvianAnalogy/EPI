@@ -37,3 +37,6 @@ Two possibly null elements e1 and e2 are deeply equal if any of the following co
 Note that this definition permits null elements at any depth. 
 
 -----------------------------------------
+
+Arrays.asList is O(1) and is very helpful in interview situations.
+Arrays.asList returns a partially mutable object. ADD and DELETE cannot happen but reordering can.

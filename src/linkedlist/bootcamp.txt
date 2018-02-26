@@ -1,0 +1,11 @@
+Last node of singly linked list point to NULL
+
+Last node of doubly linked list can use "self loop" or "sentinel node" to mark the end of the list
+
+Sentinel node is node terminator, but is not necessarily a null node
+
+Sentinel basically means to have a "node" (it can be anything) that represents end of the
+node. So basically, we have a node that we share between multiple linked list to represent
+the end of the linked list.
+If we are using null instead, we have to make the last node point to null each time, but
+with sentinel we can declare a sentinel node once and then use it all across.
